@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+message: "If you use ADA Predictor, please cite it as below."
+type: software
+title: "ADA Predictor: An Integrated Sequence-Intrinsic Immunogenicity Risk Predictor for Protein Therapeutics with a 289-Drug Clinical Reference Library"
+authors:
+  - family-names: Li
+    given-names: Kaitong
+    email: likaitong@joinn-lab.com
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Tang
+    given-names: Min
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Wu
+    given-names: Feilin
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Yang
+    given-names: Mei
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Jiang
+    given-names: Lijie
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Liu
+    given-names: Guoyou
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Zhou
+    given-names: Zonglei
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Guo
+    given-names: Peng
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Guang
+    given-names: Jiaona
+    affiliation: "JOINN Medical Testing Laboratories (Beijing) Co., Ltd."
+  - family-names: Dong
+    given-names: Jingwen
+    affiliation: "China Pharmaceutical University"
+  - family-names: Zhang
+    given-names: Zhen
+    affiliation: "China Pharmaceutical University"
+  - family-names: Pang
+    given-names: Lin
+    affiliation: "JOINN Pharmaceutical Quality Research and Testing (Beijing) Co., Ltd."
+  - family-names: Rao
+    given-names: Chunming
+    affiliation: "JOINN Pharmaceutical Quality Research and Testing (Beijing) Co., Ltd."
+repository-code: "https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor"
+url: "https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor"
+license: MIT
+keywords:
+  - immunogenicity
+  - anti-drug antibody
+  - MHC epitope
+  - B-cell epitope
+  - antibody CDR
+  - germline
+  - neutralizing antibody
+  - protein therapeutics
+  - bioinformatics
+abstract: >-
+  Immunogenicity — the development of anti-drug antibodies (ADA) against
+  therapeutic proteins — drives reduced efficacy, altered pharmacokinetics,
+  and adverse events. ADA Predictor is a web platform on the immunopred engine
+  that combines MHC-I/II epitope prediction, B-cell linear epitope consensus
+  scoring, antibody CDR delimitation and germline V-gene alignment, multi-signal
+  risk flags with capped uplift, and an independent NAb risk score; a 289-biologic
+  reference library (IDC-DS-V1) provides clinical ADA/NAb rates for background
+  comparison without participating in the sequence score.
+# After bioRxiv acceptance, add:
+# preferred-citation:
+#   type: article
+#   authors: ...
+#   title: ...
+#   doi: "10.1101/xxxx.xx.xx.xxxxxx"
+#   journal: bioRxiv
+#   year: 2026

@@ -1,0 +1,28 @@
+# ADA - Anti-Drug Antibody immunogenicity predictor
+# Core (Python 3.7+ compatible)
+fastapi==0.95.2
+uvicorn==0.22.0
+requests>=2.25
+openpyxl>=3.0
+
+# immunopred engine dependencies
+pandas>=1.3,<2.0
+numpy>=1.21
+biopython>=1.79
+typing-extensions>=4.0
+
+# Optional high-accuracy MHC-I backend (free, Apache-2.0).
+# mhcflurry 2.x requires Python >= 3.10 (PyTorch) and is NOT imported into this
+# Python 3.7-compatible core: it runs in an isolated interpreter over a JSON
+# subprocess protocol (see ada/epitopes/mhcflurry_worker.py).
+# Automated provisioning on Windows:  powershell -File tools/setup_mhcflurry.ps1
+#   -> installs an embeddable Python 3.10 under tools/py310, pip-installs
+#      mhcflurry==2.2.1 and fetches models_class1_presentation.
+# Override the interpreter with env var ADA_MHCFLURRY_PYTHON.
+# When unavailable (or for alleles unsupported by the loaded models), the
+# pipeline transparently falls back to the heuristic-v1 anchor-motif scan.
+# mhcflurry==2.2.1   (Python >=3.10 external interpreter only)
+
+# Optional ML model training on the curated FDA drug dataset
+# scikit-learn>=1.0
+# numpy>=1.21

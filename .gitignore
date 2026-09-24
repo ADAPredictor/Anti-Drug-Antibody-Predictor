@@ -1,0 +1,47 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+
+# --- Bundled runtime & ML models (provisioned, not versioned) ---
+tools/py310/
+tools/py310.zip
+tools/mhcflurry_data/
+tools/get-pip.py
+
+# --- Runtime data (regenerated from ada/data/seed_drugs.json) ---
+data/ada.db
+data/ada.db-journal
+data/structures/*.bak
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# --- Local env / secrets ---
+.env
+*.local
+
+# --- Temporary / local debug scripts ---
+_id_check.py
+_id_out.txt
+
+# --- Manuscript drafts / temps (not for public repo) ---
+paper/ADA_manuscript_Bioinformatics-3.docx
+paper/ADA_manuscript_Bioinformatics_zh-3.docx
+paper/*_tmp.docx
+paper/~$*.docx
+
+# --- Agent planning scratch ---
+.trae/

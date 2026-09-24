@@ -1,0 +1,10 @@
+﻿inn,lineage,ada_seq_risk,tier,clinical_ada_pct,nab_risk
+infliximab,chimeric,58.2,high,34.23,23.2
+rituximab,chimeric,5.0,low,5.03,13.1
+cetuximab,chimeric,24.0,moderate,2.93,14.9
+trastuzumab,humanized,16.0,low,2.27,15.1
+bevacizumab,humanized,16.0,low,3.71,13.5
+omalizumab,humanized,14.7,low,0.29,7.2
+adalimumab,human,14.4,low,36.67,17.0
+panitumumab,human,6.4,low,3.6,16.9
+golimumab,human,12.9,low,8.5,13.1

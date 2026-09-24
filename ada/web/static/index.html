@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADA Predictor · 蛋白药物免疫原性预测平台</title>
+<link rel="stylesheet" href="/static/styles.css?v=5">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">ADA Predictor</span>
+    <span class="subtitle" data-i18n="subtitle">蛋白药物免疫原性预测 · Anti-Drug Antibody Predictor</span>
+  </div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="predict" data-i18n="tab_predict">免疫原性预测</button>
+    <button class="tab" data-tab="drugs" data-i18n="tab_drugs">上市药物参照库</button>
+    <button class="tab" data-tab="methods" data-i18n="tab_methods">方法说明</button>
+  </nav>
+  <div class="header-right">
+    <button id="lang-toggle" class="lang-btn" title="Switch language">EN</button>
+  </div>
+</header>
+
+<main>
+  <!-- ============================ PREDICT ============================ -->
+  <section id="tab-predict" class="tab-panel active">
+    <div class="layout">
+      <div class="card form-card">
+        <h2 data-i18n="form_title">输入蛋白序列</h2>
+        <p class="hint" data-i18n="form_hint">支持纯序列或 FASTA；多条链（重链/轻链）请使用多个 <code>&gt;</code> 标题。MHC 等位基因内置，无需手动指定。</p>
+        <div class="form-row">
+          <label data-i18n="seq_name_label">序列名称（可选）</label>
+          <input id="seq-name" data-i18n-ph="seq_name_ph" placeholder="如 adalimumab（留空则用 FASTA 标题）">
+        </div>
+        <textarea id="seq-input" rows="10" data-i18n-ph="seq_ph" placeholder="粘贴氨基酸序列或 FASTA（支持多链，如 >adalimumab heavy chain 换行 VH序列 换行 >adalimumab light chain 换行 VL序列）"></textarea>
+        <div class="form-row">
+          <label data-i18n="drug_class_label">药物类别（提示，留空自动推断）</label>
+          <select id="drug-class"></select>
+        </div>
+        <button id="run-btn" class="primary" data-i18n="run_btn">运行预测</button>
+        <div id="predict-error" class="error-box" hidden></div>
+      </div>
+
+      <div id="results" class="results">
+        <div class="card placeholder-card">
+          <h2 data-i18n="placeholder_title">预测结果将在此显示</h2>
+          <p data-i18n="placeholder_desc">综合 MHC-I/II 表位负荷、B 细胞表位、CDR/种系异源性与聚集倾向，输出 0–100% 的<b>序列内在免疫原性风险</b>；上市药物的临床 ADA 发生率仅作背景对照，不参与评分。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= DRUGS ============================ -->
+  <section id="tab-drugs" class="tab-panel">
+    <div class="card">
+      <div class="drugs-toolbar">
+        <h2 id="drugs-title" data-i18n="drugs_title">上市蛋白药物参照库（289 条）</h2>
+        <div class="inline">
+          <input id="drug-search" data-i18n-ph="search_ph" placeholder="搜索名称 / 通用名(INN)">
+          <select id="drug-modality"><option value="" data-i18n="all_categories">全部类别</option></select>
+        </div>
+      </div>
+      <p class="hint" data-i18n="drugs_hint">ADA / NAb 发生率来自 IDC-DS-V1 等公开临床数据集（CC BY 4.0），受检测方法、给药途径与合并用药影响，跨药物比较需谨慎。序列与临床数据均不参与预测评分。</p>
+      <div class="table-wrap">
+        <table id="drugs-table">
+          <thead>
+            <tr>
+              <th data-i18n="th_name">名称</th><th data-i18n="th_inn">通用名(INN)</th><th data-i18n="th_class">类别</th>
+              <th data-i18n="th_ada">ADA(%)</th><th data-i18n="th_nab">NAb(%)</th><th data-i18n="th_source">来源</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="drug-detail" class="card" hidden></div>
+  </section>
+
+  <!-- ============================ METHODS =========================== -->
+  <section id="tab-methods" class="tab-panel">
+    <div class="card methods">
+      <h2 data-i18n="tab_methods">方法说明</h2>
+      <div id="methods-content"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span data-i18n="footer">ADA Predictor v0.1 · 仅供科研与早期药物筛选使用，不构成临床或注册决策依据</span>
+  <span class="footer-sep">·</span>
+  <a href="https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor" target="_blank" rel="noopener" data-i18n="footer_github">GitHub</a>
+</footer>
+
+<script src="/static/i18n.js?v=5"></script>
+<script src="/static/app.js?v=5"></script>
+</body>
+</html>
