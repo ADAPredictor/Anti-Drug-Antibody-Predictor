@@ -85,7 +85,7 @@ python -m unittest discover -s tests
 - `biorxiv_submission_guide.md` — bioRxiv 预印本提交信息与 Cover Letter
 - `github_release_checklist.md` — GitHub 首次发布清单
 
-**数据可用性**：289 药临床参照表（IDC-DS-V1，CC BY 4.0）随本仓库分发；IEDB 缓存（`paper/_iedb_cache.json`）供复现使用。
+**数据可用性**：289 药临床参照表 `data/ada_reference.csv` 随本仓库分发，以 **CC BY 4.0** 发布（见 [`LICENSE-CC-BY-4.0`](LICENSE-CC-BY-4.0)）；其中 96 条的临床 ADA 率与序列来自 IDC-DS-V1，沿用该数据集的 CC BY 4.0 许可并按要求署名，其余各行分别来自 FDA/EMA 说明书、Thera-SAbDab 与 UniProt/PDB，逐行出处见 CSV 的 `source` / `ada_citation` / `sequence_citation` 列，第三方署名汇总见 [`NOTICE`](NOTICE)。IEDB 缓存（`paper/_iedb_cache.json`）供复现使用。
 
 ### Citation
 
@@ -100,4 +100,10 @@ https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor
 
 ## 许可
 
-MIT License — 见 [LICENSE](LICENSE)。临床参照表中来自 IDC-DS-V1 的内容遵循 CC BY 4.0。
+本仓库采用**代码与数据分开许可**：
+
+- **源代码**（`ada/`、`tools/`、`tests/`、`run.py`、`build_docx.py` 等）：MIT License — 见 [LICENSE](LICENSE)。
+- **数据**（`data/ada_reference.csv`、`data/ada_label_priors.csv`、`paper/benchmark_composite.csv` 等）：Creative Commons Attribution 4.0 International（**CC BY 4.0**）— 见 [LICENSE-CC-BY-4.0](LICENSE-CC-BY-4.0)。
+- **第三方内容署名**（IDC-DS-V1、FDA/EMA、Thera-SAbDab、UniProt、PDB、IEDB、IMGT）：见 [NOTICE](NOTICE)。
+
+转载参照表时请同时保留上述署名；来自 IDC-DS-V1 的 96 条记录由该数据集以 CC BY 4.0 提供，本仓库对其原值未作修改。

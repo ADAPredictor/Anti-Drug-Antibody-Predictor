@@ -45,7 +45,9 @@ authors:
     affiliation: "JOINN Pharmaceutical Quality Research and Testing (Beijing) Co., Ltd."
 repository-code: "https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor"
 url: "https://github.com/ADAPredictor/Anti-Drug-Antibody-Predictor"
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 keywords:
   - immunogenicity
   - anti-drug antibody

@@ -1,0 +1,86 @@
+ADA Predictor — NOTICE and third-party attribution
+===================================================
+
+This repository contains software and data under two licenses:
+
+  * Source code (ada/, tools/, tests/, run.py, build_docx.py, ...): MIT License,
+    see LICENSE.
+  * Data (data/ada_reference.csv and the other data and result files listed in
+    LICENSE-CC-BY-4.0): Creative Commons Attribution 4.0 International
+    (CC BY 4.0), see LICENSE-CC-BY-4.0.
+
+The reference table data/ada_reference.csv is a compilation of 289 marketed
+biologics assembled by the ADA Predictor authors. The provenance of each row is
+recorded in its `source`, `ada_citation` and `sequence_citation` fields. The
+compilation as a whole, together with the derived fields added by the authors
+(the normalised drug class, the route, the approval flag, the NAb annotation and
+the sequence split into heavy and light chains), is released under CC BY 4.0.
+The upstream sources are attributed below.
+
+1. IDC-DS-V1 clinical immunogenicity dataset
+   Immunogenicity Database Collaborative.
+   https://immunogenicitydb.org/
+   Licensed under CC BY 4.0.
+   Used for: the clinical ADA rate of 96 entries (flagged "IDC-DS-V1" in the
+   `source` column), the corresponding patient-weighted statistics and, for those
+   entries, the antibody sequences.
+   The values were not modified; where a single patient-weighted mean was
+   derived from the published cohorts, the cohort and patient counts are given
+   in the `notes` column so that the derivation can be checked.
+
+2. FDA and EMA product labels
+   U.S. Food and Drug Administration (Drugs@FDA, openFDA) and European Medicines
+   Agency (EPAR product information).
+   Public-domain regulatory data; no copyright is claimed by the ADA Predictor
+   authors on the extracted incidence ranges.
+   Used for: the clinical ADA rate of 169 entries, taken as the midpoint of the
+   labelled incidence range (flagged "FDA/EMA label" in the `source` column).
+
+3. Thera-SAbDab / SAbDab
+   Oxford Protein Informatics Group (OPIG), University of Oxford.
+   https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/
+   Used for: the heavy and light chain sequences of 53 entries (see the
+   `sequence_citation` column). Users of these sequences should also observe the
+   terms of use stated by OPIG for SAbDab.
+
+4. UniProt
+   The UniProt Consortium. https://www.uniprot.org/
+   Licensed under CC BY 4.0.
+   Used for: the sequences of the non-antibody proteins and the chain
+   boundaries of the antibody entries.
+
+5. RCSB Protein Data Bank
+   https://www.rcsb.org/
+   Released under CC0 1.0.
+   Used for: the structural reference data and the chain definitions.
+
+6. IEDB
+   Immune Epitope Database and Analysis Resource, NIAID.
+   https://www.iedb.org/
+   Used for: the public percentile-rank caches bundled under paper/ for the
+   reproduction of the benchmark (paper/_iedb_cache.json).
+
+7. IMGT
+   The International ImMunoGeneTics information system, LIGM/CNRS.
+   https://www.imgt.org/
+   Used for: the bundled human V-gene pool under data/germlines/, used for the
+   germline alignment. IMGT data are subject to the IMGT terms of use; the
+   bundled copy is a subset reproduced for reproducibility of the alignment and
+   is not relicensed by the ADA Predictor authors. If you redistribute the
+   germline pool separately, cite IMGT and observe its terms.
+
+8. NetMHCpan / NetMHCIIpan and mhcflurry
+   Technical University of Denmark (DTU Health Tech) and the mhcflurry
+   contributors. These tools are not redistributed here; they are invoked
+   optionally as external backends and remain under their own academic licenses.
+
+Notes
+-----
+* No warranty is given for the accuracy of the compiled clinical rates. The
+  assay methods and the trial designs differ across the source studies, and
+  cross-drug comparisons should be made with caution; see the Limitations
+  section of the manuscript.
+* If you believe that a row is mis-attributed, please open an issue so that the
+  attribution can be corrected.
+
+Correspondence: Kaitong Li, likaitong@joinn-lab.com
